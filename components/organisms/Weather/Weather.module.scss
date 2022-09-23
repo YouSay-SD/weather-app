@@ -1,0 +1,13 @@
+@import "../../../styles/baseline/_styles";
+
+.weather {
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(239,219,255,1) 0%, rgba(202,183,255,1) 100%);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

@@ -1,9 +1,9 @@
-import Hero from '../../organisms/Hero/Hero'
+import Weather from '../../organisms/Weather/Weather'
 
 const LayoutHome = () => {
   return (
     <main>
-      <Hero />
+      <Weather />
     </main>
   )
 }

@@ -5,7 +5,8 @@
   width: 100%;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.85) 0px 25px 20px -20px;
+  box-shadow: rgba(#8660FF, 0.65) 0px 25px 20px -10px;
+  background-color: $color-white;
 }
 
 .header {
@@ -13,26 +14,25 @@
   top: 20px;
   z-index: 1;
   text-align: center;
+  width: 100%;
 }
 
 .imgContainer {
   position: relative;
-  min-height: 450px;
-  display: flex;
-  justify-content: center;
-}
-
-.temp {
+  width: 100%;
+  min-height: 40vh;
+  vertical-align: top;
+  
+  @include respond-above($bp-md) {
+    min-height: 450px;
+  }
 }
 
 .textContainer {
   padding: 0 20px;
 }
 
-.infoRow {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.info {
   padding: 20px 0;
   position: relative;
   border-bottom: 1px solid rgba($color-black, .08);
@@ -40,4 +40,10 @@
   &:last-of-type {
     border-bottom: initial;
   }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
