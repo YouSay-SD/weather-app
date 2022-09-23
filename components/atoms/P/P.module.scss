@@ -1,0 +1,47 @@
+@import "../../../styles/baseline/_styles";
+
+.p {
+  font-family: $font-secondary;
+  font-size: rem-calc(16);
+  line-height: rem-calc(24);
+  font-weight: $regular;
+
+  // Color: Primary
+  &.primary {
+    color: $color-primary;
+  }
+  
+  // Color: Secondary
+  &.secondary {
+    color: $color-secondary;
+  }
+
+  // Color: White
+  &.white {
+    color: $color-white;
+  }
+
+  // Size: Extra Small
+  &.xs {
+    font-size: rem-calc(14);
+    line-height: rem-calc(20);
+  }
+
+  // Size: Small
+  &.sm {
+    font-size: rem-calc(16);
+    line-height: rem-calc(24);
+  }
+
+  // Size: Medium
+  &.md {
+    font-size: rem-calc(20);
+    line-height: rem-calc(28);
+  }
+
+  // Size: Large
+  &.lg {
+    font-size: rem-calc(24);
+    line-height: rem-calc(30);
+  }
+}
