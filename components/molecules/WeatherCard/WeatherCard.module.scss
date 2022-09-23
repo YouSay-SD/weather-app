@@ -1,0 +1,43 @@
+@import "../../../styles/baseline/_styles";
+
+.weatherCard {
+  max-width: 340px;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.85) 0px 25px 20px -20px;
+}
+
+.header {
+  position: absolute;
+  top: 20px;
+  z-index: 1;
+  text-align: center;
+}
+
+.imgContainer {
+  position: relative;
+  min-height: 450px;
+  display: flex;
+  justify-content: center;
+}
+
+.temp {
+}
+
+.textContainer {
+  padding: 0 20px;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  position: relative;
+  border-bottom: 1px solid rgba($color-black, .08);
+
+  &:last-of-type {
+    border-bottom: initial;
+  }
+}
