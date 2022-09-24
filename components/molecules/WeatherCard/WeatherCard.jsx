@@ -1,52 +1,26 @@
 import styles from '../WeatherCard/WeatherCard.module.scss'
-import Image from 'next/image'
-import P from '../../atoms/P/P'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import Favorite from '../../atoms/Favorite/Favorite'
+import RowInfoCard from '../../atoms/RowInfoCard/RowInfoCard'
+import Title from '../../atoms/Title/Title'
+import RowContentCard from '../../atoms/RowContentCard/RowContentCard'
 
-const WeatherCard = ({ weather, temp, tempMax, tempMin, loading }) => {
+const WeatherCard = ({ name, countrySearched, weather, temp, tempMax, tempMin, loading }) => {
   return (
     <div className={styles.weatherCard}>
-      <div className={styles.imgContainer}>
-        {!loading && (
-          <div className={styles.header}>
-            <P className={styles.temp} color="white" size="lg">
-              {weather}
-            </P>
-            <P className={styles.temp} color="white" size="lg">
-              {temp}
-            </P>
-          </div>
-        )}
-
-        {loading ? (
-          <Skeleton className={styles.imgContainer} />
-        ) : (
-          <Image src="/assets/img/weather-card.png" alt="Weather" layout="fill" objectFit="cover" />
-        )}
-      </div>
-      <div className={styles.textContainer}>
-        <div className={`${styles.info} ${!loading && styles.row}`}>
-          {loading ? (
-            <Skeleton height={21} />
-          ) : (
-            <>
-              <P>Temp max</P>
-              <P>{tempMax}</P>
-            </>
-          )}
+      <div className={styles.topContainer}>
+        <Favorite country={countrySearched} />
+        <div className={styles.title}>
+          {loading ? <Skeleton height={42} /> : <Title color="white">{name}</Title>}
         </div>
-        <div className={`${styles.info} ${!loading && styles.row}`}>
-          {loading ? (
-            <Skeleton height={21} />
-          ) : (
-            <>
-              <P>Temp min</P>
-              <P>{tempMin}</P>
-            </>
-          )}
+        <div className={styles.header}>
+          <RowContentCard loading={loading} text={weather} />
+          <RowContentCard loading={loading} text={`${temp}°`} />
         </div>
       </div>
+      <RowInfoCard loading={loading} label="Temp max" value={`${tempMax}°`} />
+      <RowInfoCard loading={loading} label="Temp min" value={`${tempMin}°`} />
     </div>
   )
 }

@@ -3,47 +3,36 @@
 .weatherCard {
   max-width: 340px;
   width: 100%;
-  border-radius: 20px;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: rgba(#8660FF, 0.65) 0px 25px 20px -10px;
-  background-color: $color-white;
+  box-shadow: rgba(#453449, 0.65) 0px 25px 20px -10px;
+  background-color: $color-primary;
+  animation: fadeIn 1s;
+  transition: $global-transition;
+  padding: 20px;
+  padding-bottom: initial;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .header {
-  position: absolute;
-  top: 20px;
-  z-index: 1;
   text-align: center;
   width: 100%;
 }
 
-.imgContainer {
+.topContainer {
   position: relative;
   width: 100%;
-  min-height: 40vh;
+  min-height: 30vh;
   vertical-align: top;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   
   @include respond-above($bp-md) {
-    min-height: 450px;
+    min-height: 350px;
   }
-}
-
-.textContainer {
-  padding: 0 20px;
-}
-
-.info {
-  padding: 20px 0;
-  position: relative;
-  border-bottom: 1px solid rgba($color-black, .08);
-
-  &:last-of-type {
-    border-bottom: initial;
-  }
-}
-
-.row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
