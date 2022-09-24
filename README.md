@@ -1,5 +1,9 @@
-## Getting Started
+## Website Url
+```bash
+https://weather-app-yousay-sd.vercel.app/
+```
 
+## Getting Started
 First, run the development server:
 
 ```bash
@@ -16,6 +20,8 @@ NEXT_PUBLIC_API=https://api.openweathermap.org/data/2.5
 NEXT_PUBLIC_DEFAULT_COUNTRY=argentina
 ```
 
+
+```
 ### TO DO List
 
 ✅| El proyecto debe ser construido con Next.JS.
