@@ -4,7 +4,7 @@ import { API } from './api'
 const weatherService = {}
 
 weatherService.getWeatherByCountry = async (countryName = defaultCountry) => {
-  return await API.get(`/weather?q=${countryName}&appid=${apiKey}`)
+  return await API.get(`/weather?q=${countryName}&appid=${apiKey}&units=metric`)
     .then((res) => res.data)
     .catch((err) => {
       throw err?.response?.data

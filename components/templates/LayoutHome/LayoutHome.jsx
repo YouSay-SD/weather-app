@@ -1,9 +1,12 @@
+import StoreProvider from '../../organisms/StoreProvider/StoreProvider'
 import Weather from '../../organisms/Weather/Weather'
 
 const LayoutHome = () => {
   return (
     <main>
-      <Weather />
+      <StoreProvider>
+        <Weather />
+      </StoreProvider>
     </main>
   )
 }
