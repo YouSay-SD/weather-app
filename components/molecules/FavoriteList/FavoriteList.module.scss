@@ -47,7 +47,7 @@
   @include respond-above($bp-md) {
     max-height: 300px;
     grid-template-columns: 1fr;
-  margin-top: 20px;
+    margin-top: 20px;
   }
 
   li {

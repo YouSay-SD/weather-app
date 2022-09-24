@@ -4,7 +4,7 @@ import LayoutHome from '../components/templates/LayoutHome/LayoutHome'
 export default function Home() {
   return (
     <>
-      <HeadSeo />
+      <HeadSeo title="Weather App" />
       <LayoutHome />
     </>
   )

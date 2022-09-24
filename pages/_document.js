@@ -5,7 +5,7 @@ class MyDocument extends Document {
     return (
       <Html lang="es">
         <Head>
-          <meta name="Description" content="Back office - casa almacén" />
+          <meta name="Description" content="Weather App" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
           <link

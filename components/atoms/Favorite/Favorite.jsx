@@ -20,26 +20,18 @@ const Favorite = ({ country }) => {
     setAsSaved()
   }, [country, favorites])
 
-  const handleClick = async () => {
-    // Add to favorite
-    if (!saved) {
-      dispatch({
-        type: types.ADD_TO_FAVORITE,
-        payload: country,
-      })
-    }
-
-    // Remove to favorite
-    if (saved) {
-      dispatch({
-        type: types.REMOVE_FROM_FAVORITE,
-        payload: country,
-      })
-    }
+  const removeOrAddToFavorite = async () => {
+    dispatch({
+      type: saved ? types.REMOVE_FROM_FAVORITE : types.ADD_TO_FAVORITE,
+      payload: country,
+    })
   }
 
   return (
-    <button className={`${styles.favorite} ${saved ? styles.saved : ''}`} onClick={handleClick}>
+    <button
+      className={`${styles.favorite} ${saved ? styles.saved : ''}`}
+      onClick={removeOrAddToFavorite}
+    >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" version="1.0" y="0" x="0">
         <path
           id="path1713"
