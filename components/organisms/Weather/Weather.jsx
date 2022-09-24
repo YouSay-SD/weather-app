@@ -9,17 +9,16 @@ import Container from '../../atoms/Container/Container'
 import FavoriteList from '../../molecules/FavoriteList/FavoriteList'
 import { StoreContext } from '../StoreProvider/StoreProvider'
 import { types } from '../../../store/types'
+import { toastError } from '../../../utils/toast'
 
 const Weather = () => {
-  const [store, dispatch] = useContext(StoreContext)
+  const [, dispatch] = useContext(StoreContext)
   const [loading, setLoading] = useState(false)
   const [weather, setWeather] = useState(null)
   const [countrySelected, setCountrySelected] = useState(defaultCountry)
   const [{ key }, handleInputChange] = useForm({
     key: defaultCountry,
   })
-
-  console.log('store', store)
 
   useEffect(() => {
     dispatch({ type: types.GET_FAVORITES })
@@ -44,6 +43,8 @@ const Weather = () => {
       setWeather(resp)
     } catch (err) {
       console.log('err', err)
+
+      toastError({ value: country })
     } finally {
       setLoading(false)
     }
