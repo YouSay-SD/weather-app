@@ -1,0 +1,17 @@
+@import "../../../styles/baseline/_styles";
+
+.info {
+  padding: 20px 0;
+  position: relative;
+  border-bottom: 1px solid rgba($color-white, .30);
+
+  &:last-of-type {
+    border-bottom: initial;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
