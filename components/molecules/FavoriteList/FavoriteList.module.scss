@@ -1,0 +1,66 @@
+@import "../../../styles/baseline/_styles";
+
+.favoriteList {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  animation: fadeIn 1s;
+  transition: $global-transition;
+  
+  @include respond-above($bp-md) {
+    max-width: 240px;
+  }
+}
+
+.list {
+  width: 100%;
+  padding: 20px;
+  padding-top: 0;
+  margin-top: 20px;
+  color: $color-white;
+  overflow-y: auto;
+  max-height: 110px;
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+
+  &::-webkit-scrollbar:vertical {
+    width: 10px;
+    background-color: rgba($color-white, .3);
+  }
+
+  &::-webkit-scrollbar:horizontal {
+    height: 11px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 7px;
+    background-color: #A8AEB9;
+    border: 2px solid #E3E8EF;
+  }
+  
+  @include respond-above($bp-md) {
+    max-height: 300px;
+    grid-template-columns: 1fr;
+  margin-top: 20px;
+  }
+
+  li {
+    transition: $global-transition;
+    cursor: pointer;
+    padding: 3px 0;
+
+    &:hover {
+      transform: scale(1.010);
+    }
+
+    &:first-letter {
+      text-transform: uppercase;
+    } 
+  }
+}
